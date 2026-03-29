@@ -1,0 +1,7 @@
+{
+  "title": "Restart gateway if ws-stream 500",
+  "summary": "Auto-heal web channel failures",
+  "steps": [
+    {"action": "restart_gateway", "scope": "system.control"}
+  ]
+}
