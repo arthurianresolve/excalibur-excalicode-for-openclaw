@@ -27,13 +27,28 @@ export function transition(state, event, payload) {
 
   if (event === 'propose') {
     next.current = { status: 'proposed', spec: payload, at: now };
-  }
-  if (event === 'approve' && next.current) {
-    next.current.status = 'approved';
-  }
-  if (event === 'apply' && next.current) {
-    next.current.status = 'applied';
+    return next;
   }
 
-  return next;
+  if (!next.current) {
+    throw new Error('No active proposal');
+  }
+
+  if (event === 'approve') {
+    if (next.current.status !== 'proposed') {
+      throw new Error(`Cannot approve from status ${next.current.status}`);
+    }
+    next.current.status = 'approved';
+    return next;
+  }
+
+  if (event === 'apply') {
+    if (next.current.status !== 'approved') {
+      throw new Error(`Cannot apply from status ${next.current.status}`);
+    }
+    next.current.status = 'applied';
+    return next;
+  }
+
+  throw new Error(`Unknown event: ${event}`);
 }

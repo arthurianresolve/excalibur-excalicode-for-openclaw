@@ -1,0 +1,14 @@
+{
+  "policies": [
+    {
+      "id": "allow-workflow",
+      "scopes": ["workflow.*"],
+      "decision": "allow"
+    },
+    {
+      "id": "deny-system",
+      "scopes": ["system.control"],
+      "decision": "prompt"
+    }
+  ]
+}
