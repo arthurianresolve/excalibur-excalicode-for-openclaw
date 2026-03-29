@@ -10,6 +10,7 @@ Operational prototype for mapping OpenSpec-style commands into OpenClaw’s comm
 - **State machine prototype** with durable JSON state (`src/state-machine.js`).
 - **Exec‑policy integration** with glob scopes + conditions (`src/execpolicy.js`).
 - **OpenClaw integration notes** (`docs/openclaw-integration.md`).
+- **OpenClaw command snippet** (`docs/openclaw-command-snippet.md`).
 
 ## Quickstart
 ```bash
