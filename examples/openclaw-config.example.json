@@ -1,0 +1,17 @@
+{
+  "commands": {
+    "excalicode": {
+      "description": "OpenSpec-style workflow commands",
+      "actions": {
+        "propose": "excalicode propose",
+        "approve": "excalicode approve",
+        "apply": "excalicode apply --policy $EXCALICODE_POLICY_PATH",
+        "status": "excalicode status"
+      }
+    }
+  },
+  "env": {
+    "EXCALICODE_POLICY_PATH": "/home/george/.openclaw/policies/excalicode.json",
+    "EXCALICODE_STATE_PATH": "/home/george/.openclaw/state/excalicode-state.json"
+  }
+}
